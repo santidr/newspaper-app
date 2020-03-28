@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Delete</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete "{{ article.title }}"?</p>
+        <a class="btn btn-secondary ml-2" href="javascript:history.back()">Cancel</a>
+        <button class="btn btn-danger ml-2" type="submit">Confirm</button>
+    </form>
+{% endblock content %}
